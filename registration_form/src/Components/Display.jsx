@@ -1,6 +1,18 @@
 import './Display.css'
+import { useEffect } from 'react';
+import { dataRequest } from './CountrySlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const Display = () => {
+
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.countries);
+
+
+  useEffect(()=> {
+    dispatch(dataRequest());
+  }, [] );
+
   return (
     <div className=" kontener " >
       <div className="row mb-3">
@@ -23,8 +35,14 @@ const Display = () => {
           <label htmlFor="country" className="form-label">
             Lakhely (Ország)
           </label>
-          <select name="country" className="form-control"></select>
+
+          <select name="country" className="form-control">
+            {state.status === 'Ready' && state.list.map((item,index) => (
+              <option key={index} value={item.iso2}>{item.name}</option>
+            ))}
+          </select>
         </div>
+
         <div className="col">
           <label htmlFor="city" className="form-label">
             Város
