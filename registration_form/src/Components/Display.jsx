@@ -71,9 +71,9 @@ const Display = () => {
       </div>
 
       <div className="row mb3">
-        <div className="form-check">
+        <div className="form-check d-flex ">
           <input type="checkbox" className="form-check-input" />
-          <label htmlFor="accepted" className="form-check-label">
+          <label htmlFor="accepted" className="form-check-label checkbox">
             A felhasználási feltéteket elfogadom!
           </label>
         </div>
