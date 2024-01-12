@@ -1,0 +1,12 @@
+.kontener{
+    width: 800px;
+
+}
+
+.checkbox{
+    padding-left: 10px;
+}
+
+::placeholder{
+    color: #999;
+} 
